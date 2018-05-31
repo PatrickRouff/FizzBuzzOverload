@@ -1,10 +1,25 @@
 use Mojolicious::Lite;
 
-my @test = ("Fizz", "Buzz");
-my $t = scalar @test;
-my $i = 0;
 
-get '/fizzbuzz' => {
-	text => print @test
+get '/fizzbuzz' => sub{
+	my $c = shift;
+	my $i = 1;
+	my $j = 16;
+	my $out = "";
+	while ($i <= $j) {
+		if ((($i % 3) == 0)&&(($i % 5) == 0)) {
+			$out.="FizzBuzz<br>";
+		} elsif (($i%3) == 0) {
+			$out.="Fizz<br>";
+		} elsif (($i%5)==0) {
+			$out.="Buzz<br>";
+		} else {
+			$out.=$i."<br>";
+		} 
+
+		$i++;
+	}
+
+	$c->render(text=>$out);
 };
 app->start;

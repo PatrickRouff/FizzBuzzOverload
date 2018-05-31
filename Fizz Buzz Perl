@@ -1,0 +1,38 @@
+print "At which value would you ike to begin the Fizz Buzz sequence?". "\n";
+print "Enter value here: ";
+my $fizz = <>;
+my $fizzbuzz = ($fizz - 1);
+
+print "At which value would you ike to begin the Fizz Buzz sequence?". "\n";
+print "Enter value here: ";
+my $end = <>;
+
+print "\n";
+
+print "Here are the iterations in a Fizz Buzz sequence that begins at $fizz and ends at $end";
+
+print "\n";
+
+
+
+while($fizzbuzz < $end) {
+	$fizzbuzz++;
+    
+	if(($fizzbuzz % 15) == 0){
+    	print "FizzBuzz!";
+        print "\n";
+        
+    } elsif((($fizzbuzz % 3) == 0) && (($fizzbuzz % 5) != 0)) {
+    	print "Fizz";
+        print "\n";
+        
+    } elsif((($fizzbuzz % 5) == 0) && (($fizzbuzz % 3) != 0)) {
+    	print "Buzz";
+        print "\n";
+        
+    } else {
+    	print "$fizzbuzz";
+        print "\n";
+    }
+    
+}
